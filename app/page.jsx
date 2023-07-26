@@ -111,9 +111,9 @@ const datafooter = [
 
 const tokens = [
   {
-    label: "usdt",
+    label: "raiz",
     //address: "0x3CEBe03595E53A3CEB67A88a4f7E15eE9868c9f9",
-    address: "0x0d1930fDD8221fa0f21201E1ac2918A5101891A2", // raix dex token cambiado por usdt
+    address: "0x0d1930fDD8221fa0f21201E1ac2918A5101891A2", 
     id: 0
   },
   {
