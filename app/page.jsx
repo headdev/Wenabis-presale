@@ -41,7 +41,7 @@ import { I18nextProvider, useTranslation } from 'react-i18next';
 import i18nfile from '../i18n';
 import { parseEther, formatEther } from 'viem';
 
-const CONTRACT_ADDRESS = '0xB033A270140ce6605FcdADB11b30F6C5c849c39D'; //presale contact wenabis
+const CONTRACT_ADDRESS = '0xB033A270140ce6605FcdADB11b30F6C5c849c39D'; 
 const data = [
   
   {
@@ -111,8 +111,7 @@ const datafooter = [
 
 const tokens = [
   {
-    label: "usdt",
-    //address: "0x3CEBe03595E53A3CEB67A88a4f7E15eE9868c9f9",
+    label: "raix",
     address: "0x0d1930fDD8221fa0f21201E1ac2918A5101891A2",
     id: 0
   },
