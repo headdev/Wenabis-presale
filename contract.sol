@@ -105,7 +105,7 @@ contract Presale {
    
     IERC20 public token;
     bool public paused;
-    uint256 public minDeposit = 5000000000000000000; // 50$
+    uint256 public minDeposit = 50000000000000000000; // 50$
     address public owner;
     address public feeReceiver;
     uint256 public perDollarPrice;
@@ -131,14 +131,14 @@ contract Presale {
         feeReceiver = _feeReceiver;
 
         //testnet
-        buyTokenByIndex[0] = 0x3CEBe03595E53A3CEB67A88a4f7E15eE9868c9f9;
-        buyTokenByIndex[1] = 0xeD24FC36d5Ee211Ea25A80239Fb8C4Cfd80f12Ee;
-        buyTokenByIndex[2] = 0x64544969ed7EBf5f083679233325356EbE738930;
+        //buyTokenByIndex[0] = 0x55d398326f99059fF775485246999027B3197955;
+        //buyTokenByIndex[1] = 0xeD24FC36d5Ee211Ea25A80239Fb8C4Cfd80f12Ee;
+        //buyTokenByIndex[2] = 0x64544969ed7EBf5f083679233325356EbE738930;
 
         //mainnet
-        // buyTokenByIndex[0] = 0x3CEBe03595E53A3CEB67A88a4f7E15eE9868c9f9;
-        // buyTokenByIndex[1] = 0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56;
-        // buyTokenByIndex[2] = 0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d;
+         buyTokenByIndex[0] = 0x55d398326f99059fF775485246999027B3197955;
+         buyTokenByIndex[1] = 0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56;
+         buyTokenByIndex[2] = 0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d;
     }
 
     function allBuyers() public view returns (uint256) {
@@ -215,10 +215,11 @@ contract Presale {
         }
     }
 
-    function releaseToken(address _receiver) public onlyOwner {
-        require(userBuy[_receiver] > 0, "Receiver has not bought any tokens");
-        uint256 amount = userBuy[_receiver];
-        userBuy[_receiver] = 0;
+    //I changed the function name (releaseToken). it should be worked well. there? yes ok lets to test 
+    function claimToken() external {
+        require(userBuy[msg.sender] > 0, "Receiver has not bought any tokens");
+        uint256 amount = userBuy[msg.sender];
+        userBuy[msg.sender] = 0;
         token.transfer(msg.sender, amount);
     }
 
