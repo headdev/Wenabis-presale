@@ -121,7 +121,7 @@ const tokens = [
     id: 1
   },
   {
-    label: "WBNB",
+    label: "wbnb",
     address: "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c",
     id: 2
   }
@@ -702,6 +702,7 @@ export default function Home() {
                                 }  rounded-full text-xs flex justify-center items-center`}
                             >
                               <Image
+                                width={30}
                                 alt={item.label}
                                 src={require(`./assets/${item.label}.png`)}
                               />
